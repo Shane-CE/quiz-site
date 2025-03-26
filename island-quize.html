@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Island Life Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .article, .quiz {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .article {
+      background-color: #fff;
+      border-right: 1px solid #ccc;
+    }
+
+    .quiz {
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .option {
+      margin: 6px 0;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #f0f0f0;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    .explanation {
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    #score {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 20px;
+      padding: 10px;
+      background: #dff0d8;
+      border: 1px solid #c8e5bc;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+
+    #result-message {
+      text-align: center;
+      font-size: 1.1em;
+      margin-top: 10px;
+      display: none;
+    }
+
+    #reset-btn {
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      align-self: center;
+    }
+
+    #reset-btn:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .article, .quiz {
+        height: 50vh;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="article">
+    <h2>Living on a Small Island</h2>
+    <p>My name is Ben and I’m 17. I live on a small island near Ireland. It’s 5 km long with only 200 people. When I was a child, life was great. On small islands, everybody knows everybody, so I always had someone to be with. I played in the fields and on the beach. I went swimming. I even learned to drive on my uncle’s farm when I was 11.</p>
+    <p>I’ve always enjoyed going to school here. There are only three in my class so we each get lots of time with the teacher. She doesn’t live on the island. Sometimes, if the weather is bad, she can’t get here, but we still have lessons online. The internet is great for us. We can have friends all over the world and chat and play computer games with them.</p>
+    <p>I had some difficult times when I first became a teenager. I felt that there wasn’t enough for me to do. I even thought about leaving the island because I wanted to have interesting experiences and meet new people. But I decided to stay and now I’m planning to live here when I grow up.</p>
+    <p>Unfortunately, there aren’t many jobs for young people. When I was little, most men were fishermen, like Dad, or farmers, like my uncle. Now there are just a few fishermen. It can be difficult. I’ve been fishing with Dad sometimes, but I always feel sick on a boat, so I might prefer farming.</p>
+  </div>
+
+  <div class="quiz">
+    <h2>Questions</h2>
+
+    <div class="question" data-question="14">
+      <p><strong>14. What does Ben say in the first paragraph about living on an island?</strong></p>
+      <div class="option" onclick="check(this, true, 'Ben said he always had someone to be with, so he was never lonely.')">A. He was never lonely.</div>
+      <div class="option" onclick="check(this, false, 'He talks about driving on a farm, not traveling by car.')">B. He never went anywhere by car.</div>
+      <div class="option" onclick="check(this, false, 'He mentioned the beach, but didn’t say it was his favourite.')">C. His favourite place was the beach.</div>
+      <div class="explanation"></div>
+    </div>
+
+    <div class="question" data-question="15">
+      <p><strong>15. What do we learn about the school on Ben’s island?</strong></p>
+      <div class="option" onclick="check(this, false, 'There are online lessons only when the teacher cannot come due to bad weather.')">A. The classes are usually online.</div>
+      <div class="option" onclick="check(this, false, 'The text says nothing about lesson length.')">B. The lessons are very long.</div>
+      <div class="option" onclick="check(this, true, 'Ben says there are only three students in his class.')">C. There are not many students.</div>
+      <div class="explanation"></div>
+    </div>
+
+    <div class="question" data-question="16">
+      <p><strong>16. When Ben became a teenager, he started to</strong></p>
+      <div class="option" onclick="check(this, false, 'He didn’t say he was bored, but that there wasn’t much to do.')">A. get bored with island life.</div>
+      <div class="option" onclick="check(this, true, 'He thought about leaving to meet new people and have experiences.')">B. look for a different place to live.</div>
+      <div class="option" onclick="check(this, false, 'He already had online friends, but this wasn’t his goal.')">C. make new friends in other places.</div>
+      <div class="explanation"></div>
+    </div>
+
+    <div class="question" data-question="17">
+      <p><strong>17. Why does Ben think he might become a farmer?</strong></p>
+      <div class="option" onclick="check(this, false, 'He didn’t say it was dangerous, just that it can be difficult.')">A. He thinks being a fisherman is dangerous.</div>
+      <div class="option" onclick="check(this, false, 'He helped his dad fish, but felt sick on the boat.')">B. He didn’t enjoy helping his father to fish.</div>
+      <div class="option" onclick="check(this, true, 'Ben said he feels sick on boats, so he might prefer farming.')">C. He has always preferred farming to fishing.</div>
+      <div class="explanation"></div>
+    </div>
+
+    <div class="question" data-question="18">
+      <p><strong>18. What is the writer doing in this article?</strong></p>
+      <div class="option" onclick="check(this, false, 'He doesn’t try to persuade people to move there.')">A. explaining why an island is the best place for teenagers to live</div>
+      <div class="option" onclick="check(this, true, 'He shares both positive and negative experiences.')">B. describing the good and the bad things about living on an island</div>
+      <div class="option" onclick="check(this, false, 'There’s no advice offered in the article.')">C. giving advice to people who might want to move to an island</div>
+      <div class="explanation"></div>
+    </div>
+
+    <div id="score">Score: 0 / 5</div>
+    <div id="result-message"></div>
+    <button id="reset-btn" onclick="resetQuiz()">Try Again</button>
+
+  </div>
+</div>
+
+<script>
+  let score = 0;
+  let answered = {};
+  const totalQuestions = 5;
+
+  function check(element, isCorrect, explanation) {
+    const questionEl = element.closest('.question');
+    const qNumber = questionEl.dataset.question;
+
+    if (answered[qNumber]) return;
+
+    answered[qNumber] = true;
+
+    const options = questionEl.querySelectorAll('.option');
+    options.forEach(opt => opt.style.color = '#000');
+
+    const explanationDiv = questionEl.querySelector('.explanation');
+    if (isCorrect) {
+      element.style.color = 'green';
+      explanationDiv.textContent = '✅ Correct: ' + explanation;
+      explanationDiv.className = 'explanation correct';
+      score++;
+    } else {
+      element.style.color = 'red';
+      explanationDiv.textContent = '❌ Incorrect: ' + explanation;
+      explanationDiv.className = 'explanation incorrect';
+    }
+
+    if (Object.keys(answered).length === totalQuestions) {
+      showScore();
+    }
+  }
+
+  function showScore() {
+    const scoreBox = document.getElementById('score');
+    const messageBox = document.getElementById('result-message');
+    scoreBox.textContent = `Score: ${score} / ${totalQuestions}`;
+    scoreBox.style.display = 'block';
+
+    if (score === 5) {
+      messageBox.textContent = "🎉 Perfect! You really understood the text!";
+    } else if (score >= 3) {
+      messageBox.textContent = "👍 Good job! Just a few mistakes.";
+    } else if (score >= 1) {
+      messageBox.textContent = "💡 Keep trying! Review the text and try again.";
+    } else {
+      messageBox.textContent = "📘 Don't worry, read the article again and give it another shot!";
+    }
+
+    messageBox.style.display = 'block';
+  }
+
+  function resetQuiz() {
+    score = 0;
+    answered = {};
+    document.getElementById('score').style.display = 'none';
+    document.getElementById('result-message').style.display = 'none';
+
+    const explanations = document.querySelectorAll('.explanation');
+    explanations.forEach(e => e.textContent = '');
+
+    const options = document.querySelectorAll('.option');
+    options.forEach(o => {
+      o.style.color = '#000';
+    });
+  }
+</script>
+</body>
+</html>
