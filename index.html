@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | B1 Preliminary Practice</title>
+  <link rel="stylesheet" href="header-footer.css">
+
+  <div id="header-placeholder"></div>
+
+<main>
+  <h2>Welcome to Your B1 Practice Hub</h2>
+
+  <div class="section">
+    <h3>📘 Reading Section</h3>
+    <ul>
+      <li><a href="reading-part1-quiz.html">Reading Part 1</a></li>
+      <li>Reading Part 2</li>
+      <li>Reading Part 3</li>
+      <li>Reading Part 4</li>
+      <li>Reading Part 5</li>
+      <li>Reading Part 6</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>🎿 Listening Section</h3>
+    <ul>
+      <li>Listening Part 1</li>
+      <li>Listening Part 2</li>
+      <li>Listening Part 3</li>
+      <li>Listening Part 4</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>✍ Writing Section</h3>
+    <ul>
+      <li>Writing Part 1: Email</li>
+      <li>Writing Part 2: Story</li>
+      <li>Writing Part 2: Article</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>🚣 Speaking Section</h3>
+    <ul>
+      <li>Speaking Part 1</li>
+      <li>Speaking Part 2</li>
+      <li>Speaking Part 3</li>
+      <li>Speaking Part 4</li>
+    </ul>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

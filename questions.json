@@ -1,0 +1,94 @@
+{
+  "themes": [
+    {
+      "name": "Clubs and Events",
+      "questions": [
+        {
+          "id": 1,
+          "type": "email",
+          "from": "Librarian",
+          "to": "Students",
+          "text": "Summer reading challenge for library members aged 12–18. Choose from the attached book list. You’ll get a certificate for each book you read and a prize if you read six.",
+          "question": "What does the message say about the reading challenge?",
+          "choices": {
+            "A": "People can read any book from the library as part of the reading challenge.",
+            "B": "Only certain people can take part in the reading challenge.",
+            "C": "Everyone who takes part in the reading challenge will receive a prize."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "The message mentions a specific age group for participants, not any book.",
+            "B": "Only library members aged 12–18 can join the challenge, so not everyone can take part.",
+            "C": "The message does not say that everyone will receive a prize."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Family and Messages",
+      "questions": [
+        {
+          "id": 2,
+          "type": "phone",
+          "sender": "Daniel",
+          "receiver": "Mum",
+          "text": "Your little brother’s just texted me. He’ll be late this afternoon. He forgot he had football practice at 4 p.m. Can you wait for him and bring him home as I’m really busy? – Mum",
+          "question": "Daniel’s mother is texting him to:",
+          "choices": {
+            "A": "ask Daniel to do her a favour.",
+            "B": "complain that she has too much to do.",
+            "C": "apologise for forgetting to tell Daniel something."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "She’s asking Daniel to bring his brother home because she’s busy — that’s a favour.",
+            "B": "She’s not complaining, she’s just asking Daniel to help her out.",
+            "C": "She’s not apologizing, she’s making a request."
+          }
+        },
+        {
+          "id": 3,
+          "type": "phone",
+          "sender": "Anton",
+          "receiver": "Mum",
+          "text": "Anton, When you see your sister at the basketball match later, can you make sure she remembers that Dad’s coming to fetch her instead of me? I’ve tried ringing, but her phone’s off. Thanks, Mum",
+          "question": "What does Anton need to do?",
+          "choices": {
+            "A": "Anton has to check his sister knows about the arrangements for getting home.",
+            "B": "Anton should remind his sister to switch her phone back on.",
+            "C": "Anton needs to ask his sister if she’s taking part in a sports event later."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Anton needs to make sure his sister remembers the arrangements for getting home.",
+            "B": "The message doesn't ask Anton to remind his sister about her phone, but about getting home.",
+            "C": "The message is about the arrangements for getting home, not about sports."
+          }
+        }
+      ]
+    },
+    {
+      "name": "School and Education",
+      "questions": [
+        {
+          "id": 4,
+          "type": "note",
+          "title": "Hall to be kept clear.",
+          "text": "Use hall lockers provided.\nAny items which are left out will be taken to reception by staff.",
+          "question": "What does the notice say?",
+          "choices": {
+            "A": "Students have to leave their things at reception.",
+            "B": "Students are able to leave their things in the hall.",
+            "C": "Anything remaining in this area will be put into the lockers by staff."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "The notice says any left-out items will be taken to lockers, not to reception.",
+            "B": "The notice doesn’t say that students are allowed to leave things in the hall.",
+            "C": "The notice tells students that any items left out will be placed in the lockers by staff."
+          }
+        }
+      ]
+    }
+  ]
+}

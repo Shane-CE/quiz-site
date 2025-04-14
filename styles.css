@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Font for the entire body */
+    padding: 20px; /* Padding around the content */
+    background: #f9f9f9; /* Background color */
+    max-width: 800px; /* Maximum width of the page */
+    margin: auto; /* Center the content */
+}
+
+/* Question Box Styles */
+.question-box {
+    margin-bottom: 40px; /* Space below each question box */
+}
+
+/* Frame for all types of content */
+.frame {
+    padding: 15px; /* Padding inside the frame */
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners for the frame */
+    box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Soft shadow around the frame */
+}
+
+/* Email Frame Style */
+.frame.email {
+    border: 1px solid #007bff; /* Blue border for email style */
+    background: #eef6ff; /* Light blue background for email */
+}
+
+/* Phone Frame Style */
+.frame.phone {
+    border: 2px solid #444; /* Dark gray border for phone style */
+    border-radius: 30px; /* Rounded corners for phone style */
+    background: #f0f0f0; /* Light gray background for phone */
+    padding: 20px; /* Padding inside the phone frame */
+}
+
+/* Phone Screen Layout */
+.phone .screen {
+    background: white; /* White background for the screen */
+    padding: 15px; /* Padding inside the phone screen */
+    border-radius: 15px; /* Rounded corners for the screen */
+    font-family: 'Segoe UI', sans-serif; /* Font for phone screen */
+}
+
+/* Message Options (for quiz choices) */
+.options div {
+    margin-top: 10px; /* Space above each option */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px; /* Padding inside the option */
+    border-radius: 5px; /* Rounded corners for the options */
+    background: #eee; /* Light gray background for options */
+}
+
+/* Hover effect for options */
+.options div:hover {
+    background: #ddd; /* Darker background when hovering over options */
+}
+
+/* Correct and Incorrect Answer Styles */
+.correct {
+    color: green; /* Green color for correct answers */
+    font-weight: bold; /* Bold font for correct answers */
+}
+
+.incorrect {
+    color: red; /* Red color for incorrect answers */
+    font-weight: bold; /* Bold font for incorrect answers */
+}
+
+/* Hide elements (used for score box and try again button) */
+.hidden {
+    display: none; /* Hide elements with the hidden class */
+}
+
+/* Theme Select Dropdown */
+#theme-select {
+    margin-bottom: 20px; /* Space below the theme select dropdown */
+}
+
+/* Phone Message Layout */
+.phone-message {
+    background: white; /* White background for the phone message */
+    border-radius: 15px; /* Rounded corners for phone message */
+    padding: 15px; /* Padding inside the phone message */
+    font-family: 'Segoe UI', sans-serif; /* Font for the phone message */
+}
+
+/* Paragraphs inside the phone message */
+.phone-message p {
+    margin: 5px 0; /* Small margin above and below paragraphs */
+}
+
+/* Sender name in phone messages */
+.phone-message .sender {
+    font-weight: bold; /* Bold font for sender name */
+    color: #444; /* Dark gray color for sender name */
+    margin-bottom: 5px; /* Space below the sender name */
+    display: block;  /* Ensures sender is on its own line */
+}
+
+/* Message body text inside phone messages */
+.phone-message .message-body {
+    color: #333; /* Darker text color for message body */
+    font-size: 16px; /* Fixed font size for the message body */
+}
+
+/* Note/Board Format Styling */
+.frame.note {
+    padding: 15px; /* Padding inside the note */
+    background: #f4f4f4; /* Light gray background for the note */
+    border-radius: 10px; /* Rounded corners for the note */
+    font-family: 'Segoe UI', sans-serif; /* Same font as phone message */
+    white-space: pre-line; /* Ensure text formatting and line breaks are maintained */
+    margin-top: 5px; /* Optional: space at the top of the note */
+}
+
+/* Dynamic title for Note/Board format */
+.frame.note strong {
+    font-weight: bold; /* Bold font for the note title */
+    font-size: 20px; /* Fixed font size for the note title */
+    display: block;  /* Makes sure the title is on its own line */
+    margin-bottom: 0; /* No space between title and body text */
+}
+
+/* Layout for the note body */
+.frame.note pre {
+    font-size: 16px; /* Fixed font size for the note content */
+    color: #333; /* Text color */
+    margin: 0; /* Remove any default margin */
+    padding: 0px; /* Space inside the note */
+    line-height: 1.5; /* Adjust line spacing for better readability */
+    text-align: left; /* Align text to the left */
+    white-space: pre-line; /* Ensure new lines are respected and text wraps normally */
+}
+
+
+/* Optional: for when you want a border or extra styling on the note content */
+.frame.note p {
+    margin-top: 5px; /* Space above paragraphs in the note */
+    font-size: 16px; /* Font size for paragraphs */
+    line-height: 1.5; /* Line spacing for better readability */
+    color: #555; /* Light gray color for paragraph text */
+}
+
+.option-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+    position: relative;
+}
+  .option-disabled::after {
+    content: '\1F512'; /* lock icon */
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+  .progress-tracker {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

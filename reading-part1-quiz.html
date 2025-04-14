@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reading Part 1 - Themed Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+<h2>📖 Reading Part 1 – Themed Quiz</h2>
+<label for="theme-select">Choose a theme:</label>
+<select id="theme-select"></select>
+<button id="start-button">▶ Start Quiz</button>
+
+<div id="progress" class="progress-tracker"></div>
+<div id="quiz-container"></div>
+<div id="score-box" class="hidden"></div>
+
+<button id="submit-quiz" class="hidden">✅ Submit</button>
+<button id="try-again" class="hidden">🔄 Try Again</button>
+<button id="previous-question" class="hidden">◀ Previous</button>
+<button id="next-question" class="hidden">Next ▶</button>
+<button id="review-answers" class="hidden">📜 Review Answers</button>
+
+<script>
+let questionsData;
+let currentTheme = null;
+let currentIndex = 0;
+let score = 0;
+let answersData = [];
+let optionsEnabled = false;
+
+fetch('questions.json')
+  .then(res => res.json())
+  .then(data => {
+    questionsData = data.themes;
+    const themeSelect = document.getElementById('theme-select');
+    questionsData.forEach((theme, i) => {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = theme.name;
+      themeSelect.appendChild(option);
+    });
+    themeSelect.selectedIndex = 0;
+    currentTheme = questionsData[0];
+    currentIndex = 0;
+    optionsEnabled = false;
+    showQuestion();
+  });
+
+document.getElementById('theme-select').addEventListener('change', () => {
+  currentTheme = questionsData[document.getElementById('theme-select').value];
+  currentIndex = 0;
+  optionsEnabled = false;
+  showQuestion();
+
+  document.getElementById('start-button').classList.remove('hidden');
+  document.getElementById('submit-quiz').classList.add('hidden');
+  document.getElementById('previous-question').classList.add('hidden');
+  document.getElementById('next-question').classList.add('hidden');
+  document.getElementById('try-again').classList.add('hidden');
+  document.getElementById('review-answers').classList.add('hidden');
+  document.getElementById('score-box').classList.add('hidden');
+});
+
+document.getElementById('start-button').onclick = () => {
+  score = 0;
+  currentIndex = 0;
+  answersData = [];
+  optionsEnabled = true;
+  document.getElementById('score-box').classList.add('hidden');
+  document.getElementById('try-again').classList.add('hidden');
+  document.getElementById('review-answers').classList.add('hidden');
+  document.getElementById('submit-quiz').classList.remove('hidden');
+  document.getElementById('previous-question').classList.add('hidden');
+  document.getElementById('next-question').classList.remove('hidden');
+  document.getElementById('start-button').classList.add('hidden');
+  showQuestion();
+};
+
+function showQuestion() {
+  const questionData = currentTheme.questions[currentIndex];
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+
+  document.getElementById('progress').textContent = `Question ${currentIndex + 1} of ${currentTheme.questions.length}`;
+
+  const qBox = document.createElement('div');
+  qBox.className = 'question-box';
+
+  let frameHTML = '';
+  if (questionData.type === 'phone') {
+    frameHTML = `
+      <div class="frame phone">
+        <div class="phone-message">
+          <p class="sender">${questionData.sender}</p>
+          <p class="message-body">${questionData.text}</p>
+          <p class="sender">${questionData.receiver}</p>
+        </div>
+      </div>`;
+  } else if (questionData.type === 'email') {
+    frameHTML = `
+      <div class="frame email">
+        <strong>From:</strong> ${questionData.from || 'System'}<br>
+        <strong>To:</strong> ${questionData.to || 'You'}<br><br>
+        ${questionData.text}
+      </div>`;
+  } else if (questionData.type === 'note') {
+    frameHTML = `
+      <div class="frame note">
+        <strong>${questionData.title}</strong>
+        <pre>${questionData.text}</pre>
+      </div>`;
+  } else {
+    frameHTML = `<div class="frame">${questionData.text}</div>`;
+  }
+
+  qBox.innerHTML = frameHTML;
+  const qText = document.createElement('p');
+  qText.innerHTML = '<strong>' + questionData.question + '</strong>';
+  qBox.appendChild(qText);
+
+  const optionsDiv = document.createElement('div');
+  optionsDiv.className = 'options';
+
+  for (let key in questionData.choices) {
+    const opt = document.createElement('div');
+    opt.innerHTML = `<strong>${key}</strong> ${questionData.choices[key]}`;
+    if (!optionsEnabled) opt.classList.add('option-disabled');
+    opt.onclick = () => {
+      if (optionsEnabled) {
+        checkAnswer(key, questionData.correct, questionData.explanations);
+      }
+    };
+    optionsDiv.appendChild(opt);
+  }
+  qBox.appendChild(optionsDiv);
+  container.appendChild(qBox);
+}
+
+function checkAnswer(selected, correct, explanations) {
+  const existingFeedback = document.querySelector('.feedback');
+  if (existingFeedback) existingFeedback.remove();
+
+  answersData[currentIndex] = {
+    selected: selected,
+    correct: correct,
+    explanation: explanations[selected]
+  };
+
+  const feedback = document.createElement('p');
+  feedback.className = (selected === correct) ? 'correct' : 'incorrect';
+  feedback.innerHTML = (selected === correct ? '✅ Correct! ' : '❌ Incorrect. ') + explanations[selected];
+  document.querySelector('.question-box').appendChild(feedback);
+
+  if (selected === correct) score++;
+
+  const options = document.querySelectorAll('.options div');
+  options.forEach(opt => opt.onclick = null);
+
+  document.getElementById('previous-question').classList.remove('hidden');
+  document.getElementById('next-question').classList.remove('hidden');
+}
+
+function endQuiz() {
+  const scoreBox = document.getElementById('score-box');
+  scoreBox.textContent = `You scored ${score} out of ${currentTheme.questions.length}.`;
+  scoreBox.classList.remove('hidden');
+  document.getElementById('try-again').classList.remove('hidden');
+  document.getElementById('previous-question').classList.add('hidden');
+  document.getElementById('next-question').classList.add('hidden');
+  document.getElementById('review-answers').classList.remove('hidden');
+  document.getElementById('submit-quiz').classList.add('hidden');
+}
+
+document.getElementById('submit-quiz').onclick = endQuiz;
+
+document.getElementById('try-again').onclick = () => {
+  document.getElementById('start-button').classList.remove('hidden');
+  document.getElementById('submit-quiz').classList.add('hidden');
+  document.getElementById('previous-question').classList.add('hidden');
+  document.getElementById('next-question').classList.add('hidden');
+  document.getElementById('try-again').classList.add('hidden');
+  document.getElementById('review-answers').classList.add('hidden');
+  document.getElementById('score-box').classList.add('hidden');
+  document.getElementById('quiz-container').innerHTML = '';
+  document.getElementById('progress').textContent = '';
+  optionsEnabled = false;
+  currentIndex = 0;
+  score = 0;
+  answersData = [];
+  showQuestion();
+};
+
+document.getElementById('next-question').onclick = () => {
+  if (currentIndex < currentTheme.questions.length - 1) {
+    currentIndex++;
+    showQuestion();
+  }
+};
+
+document.getElementById('previous-question').onclick = () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showQuestion();
+  }
+};
+
+document.getElementById('review-answers').onclick = () => {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+
+  const summary = document.createElement('div');
+  summary.innerHTML = `<h3>📊 Summary: You got ${score} out of ${currentTheme.questions.length} correct.</h3>`;
+  container.appendChild(summary);
+
+  currentTheme.questions.forEach((question, index) => {
+    const qBox = document.createElement('div');
+    qBox.className = 'question-box';
+
+    const qText = document.createElement('p');
+    qText.innerHTML = `<strong>Q${index + 1}: ${question.question}</strong>`;
+    qBox.appendChild(qText);
+
+    const selected = answersData[index]?.selected || '—';
+    const correct = question.correct;
+    const explanation = answersData[index]?.explanation || '';
+
+    const isCorrect = selected === correct;
+
+    const feedback = document.createElement('p');
+    feedback.className = isCorrect ? 'correct' : 'incorrect';
+    feedback.innerHTML = `
+      ${isCorrect ? '✅' : '❌'} You selected: <strong>${selected}</strong><br>
+      Correct answer: <strong>${correct}</strong><br>
+      Explanation: ${explanation}
+    `;
+    qBox.appendChild(feedback);
+    container.appendChild(qBox);
+  });
+
+  document.getElementById('review-answers').classList.add('hidden');
+  document.getElementById('try-again').classList.remove('hidden');
+};
+</script>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+
+  // Load footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+
+
+</body>
+</html>
