@@ -1,83 +1,143 @@
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f8f8f8;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+header, main, footer {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+header {
+  background-color: #deeeff;
+  color: white;
+  padding: 15px 20px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 5px 10px;
+}
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  padding: 10px;
+  list-style: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+nav ul li:hover ul {
+  display: block;
+}
+nav ul li ul li {
+  margin: 5px 0;
+}
+nav ul li ul li a {
+  color: #004080;
+  white-space: nowrap;
+}
+main {
+  flex: 1;
+  padding: 30px 40px;
+  background: white;
+}
+h1, h2 {
+  color: #004080;
+}
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+}
+.section {
+  margin-bottom: 40px;
+}
+.section ul {
+  columns: 2;
+  padding-left: 20px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #004080;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 1080px) {
+  .hamburger {
+    display: block; /* Show the hamburger button on mobile */
   }
-  body {
+
+  nav ul {
     display: flex;
     flex-direction: column;
-    width: 100%;
-  }
-  header, main, footer {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  header {
-    background-color: #004080;
-    color: white;
-    padding: 15px 20px;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-  }
-  nav ul li {
-    position: relative;
-  }
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    padding: 5px 10px;
-  }
-  nav ul li ul {
+    gap: 10px;
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    color: black;
-    padding: 10px;
-    list-style: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
+    background: #004080;
+    width: 100%;
+    padding: 20px 0;
   }
-  nav ul li:hover ul {
+
+  nav ul.show {
+    display: flex; /* Show the menu when the 'show' class is added */
+  }
+
+  nav ul li ul {
+    position: static;
+    background: #fff;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  nav ul li ul li a {
+    padding: 8px 0;
     display: block;
   }
-  nav ul li ul li {
-    margin: 5px 0;
+
+  nav ul li a {
+    font-size: 16px;
   }
-  nav ul li ul li a {
-    color: #004080;
-    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
   }
-  main {
-    flex: 1;
-    padding: 30px 40px;
-    background: white;
+
+  nav ul li a {
+    font-size: 14px;
+    padding: 8px 5px;
   }
-  h1, h2 {
-    color: #004080;
-  }
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-  }
-  .section {
-    margin-bottom: 40px;
-  }
-  .section ul {
-    columns: 2;
-    padding-left: 20px;
-  }
+}
