@@ -11,8 +11,11 @@
 
 <header>
     <h1>B1 Preliminary for Schools</h1>
+    <!-- Hamburger button for mobile view -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
+
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li>
           <a href="#">Reading</a>
@@ -53,5 +56,17 @@
         </li>
       </ul>
     </nav>
-  </header>
-  
+</header>
+
+<script>
+  // JavaScript to toggle the nav menu when hamburger is clicked
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>
