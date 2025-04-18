@@ -1,37 +1,299 @@
 {
   "themes": [
     {
-      "name": "Clubs and Events",
-      "questions": [
-        {
-          "id": 1,
-          "type": "email",
-          "from": "Librarian",
-          "to": "Students",
-          "text": "Summer reading challenge for library members aged 12–18. Choose from the attached book list. You’ll get a certificate for each book you read and a prize if you read six.",
-          "question": "What does the message say about the reading challenge?",
-          "choices": {
-            "A": "People can read any book from the library as part of the reading challenge.",
-            "B": "Only certain people can take part in the reading challenge.",
-            "C": "Everyone who takes part in the reading challenge will receive a prize."
-          },
-          "correct": "B",
-          "explanations": {
-            "A": "The message mentions a specific age group for participants, not any book.",
-            "B": "Only library members aged 12–18 can join the challenge, so not everyone can take part.",
-            "C": "The message does not say that everyone will receive a prize."
-          }
-        }
-      ]
-    },
-    {
       "name": "Family and Messages",
       "questions": [
         {
-          "id": 2,
+          "id": "tr1t1q1",
           "type": "phone",
-          "sender": "Daniel",
-          "receiver": "Mum",
+          "sender": "Mum",
+          "receiver": "Anton",
+          "text": "Anton, When you see your sister at the basketball match later, can you make sure she remembers that Dad’s coming to fetch her instead of me? I’ve tried ringing, but her phone’s off. Thanks, Mum",
+          "question": "What does Anton need to do?",
+          "choices": {
+            "A": "Anton has to check his sister knows about the arrangements for getting home.",
+            "B": "Anton should remind his sister to switch her phone back on.",
+            "C": "Anton needs to ask his sister if she’s taking part in a sports event later."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Anton needs to make sure his sister remembers the arrangements for getting home.",
+            "B": "The message doesn't ask Anton to remind his sister about her phone, but about getting home.",
+            "C": "The message is about the arrangements for getting home, not about sports."
+          }
+        },
+        {
+          "id": "tr1t2q3",
+          "type": "phone",
+          "sender": "Sophie",
+          "receiver": "Billy",
+          "text": "Have you got Joanna’s number?\nI’m supposed to meet her at the cinema in 10 minutes, but Dad’s driving me into town and we’re in a huge traffic jam!\nThanks!",
+          "question": "What does Sophie want to do?",
+          "choices": {
+            "A": "Sophie wants Billy to contact Joanna and warn her about traffic problems in town.",
+            "B": "Sophie needs to let Joanna know that she’s probably going to be late.",
+            "C": "Sophie’s not sure when she’s supposed to meet Joanna to see a film."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "Sophie asks for Joanna’s number, not for Billy to contact her himself.",
+            "B": "Sophie is asking for Joanna’s number so she can tell her she’ll be late due to traffic.",
+            "C": "Sophie clearly knows the time and place — she says she’s meeting Joanna at the cinema in 10 minutes."
+          }
+        },
+        {
+          "id": "tr1t4q1",
+          "type": "phone",
+          "sender": "Lena",
+          "receiver": "Marta",
+          "text": "I won’t be ready in time to catch the bus into town with you, so I’ll get a lift there with Mum instead. See you at the shopping centre at about 3 p.m.",
+          "question": "Lena is",
+          "choices": {
+            "A": "suggesting that Marta travels into town without her.",
+            "B": "offering Marta a lift into town instead of catching the bus.",
+            "C": "checking the time she arranged to meet Marta at the shopping centre."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Lena says she can’t catch the bus with Marta, so Marta will have to travel without her.",
+            "B": "Lena is the one getting a lift — she’s not offering Marta a lift.",
+            "C": "She’s confirming the meeting place, not checking or asking about the time."
+          }
+        },
+        {
+          "id": "tr1t4q4",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Tom",
+          "text": "The sports shop called – the one on Hatton Street. They’ve finally repaired your tennis racket! Will you have time to collect it, or shall I do it on my way home from work?",
+          "question": "What does Mum want to know?",
+          "choices": {
+            "A": "how to find the sports shop that’s repaired Tom’s racket",
+            "B": "whether the sports shop will still be open when she finishes work",
+            "C": "if Tom is going to be available to pick up his racket"
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "Mum already knows which shop it is — she mentions Hatton Street.",
+            "B": "She doesn't mention anything about the shop's opening hours.",
+            "C": "She asks if Tom can collect the racket or if she should — she wants to know if he’s available."
+          }
+        },
+        {
+          "id": "tr1t5q3",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Tim",
+          "text": "Your swimming coach rang – he wants to know if you’re swimming tomorrow, after your injury. I wasn’t sure if you felt your leg was fully recovered, so can you let him know?",
+          "question": "What does Tim need to do?",
+          "choices": {
+            "A": "Tim must decide whether he’s well enough to swim after his injury.",
+            "B": "Tim’s mum doesn’t think Tim is fit and ready to go swimming yet.",
+            "C": "Tim needs to inform his swimming coach that he’s injured his leg."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Mum says she isn’t sure if his leg has recovered and asks him to let the coach know — so he must decide if he can swim.",
+            "B": "Mum doesn’t say Tim can’t swim, only that she isn’t sure — it’s up to Tim to decide.",
+            "C": "The coach already knows about the injury — he’s asking if Tim can swim tomorrow."
+          }
+        },
+        {
+          "id": "tr2t1q1",
+          "type": "phone",
+          "sender": "Dad",
+          "receiver": "Susie",
+          "text": "Your swimming coach called about your first competition on Saturday. The race now starts at 4 pm, not 3 pm. She’s bringing a team sweatshirt for you, so don’t worry about not having one yet.",
+          "question": "Susie’s swimming coach rang to",
+          "choices": {
+            "A": "tell Susie what to bring to the competition.",
+            "B": "help Susie feel confident about her first race.",
+            "C": "update Susie with some important information."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "The coach is bringing a sweatshirt for Susie — she didn’t tell Susie to bring anything.",
+            "B": "There’s no message of encouragement or confidence-building here — it’s just factual.",
+            "C": "The coach updated Susie about the new start time and that she’ll bring a sweatshirt — both are important updates."
+          }
+        },
+        {
+          "id": "tr2t1q5",
+          "type": "phone",
+          "sender": "Sam",
+          "receiver": "",
+          "text": "Sorry, my bus is delayed! I can’t meet you at the ice cream shop. Why not go straight to the skateboard park? We’ll still get ice cream afterwards, the place stays open late.",
+          "question": "What is the main message Sam is giving?",
+          "choices": {
+            "A": "Sam’s bus problems mean they will have to change their plans.",
+            "B": "Sam wants to go to the skateboard park first because it isn’t open later.",
+            "C": "Sam is travelling on a route which doesn’t stop near the ice cream shop."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Sam suggests a new plan because the bus is delayed — they can’t meet at the ice cream shop as originally planned.",
+            "B": "The message says they can go to the ice cream shop *after* — it's still open late.",
+            "C": "There’s no mention of bus routes or stop locations — just a delay."
+          }
+        },
+        {
+          "id": "tr2t2q1",
+          "type": "phone",
+          "sender": "Kim",
+          "receiver": "Marta",
+          "text": "We’ve tried booking tickets for tomorrow’s theatre trip, but the website isn’t working. I’ll go to the theatre today and get them. It’s probably quicker than waiting for the website to be fixed!",
+          "question": "What is Kim doing in this message?",
+          "choices": {
+            "A": "telling Marta why the day of a trip needs to change",
+            "B": "explaining to Marta why she hasn’t bought tickets for the theatre yet",
+            "C": "warning Marta not to buy tickets from the theatre website"
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "The trip is still happening tomorrow — there’s no change to the date.",
+            "B": "Kim is explaining that she hasn’t booked tickets yet because the website isn’t working.",
+            "C": "Kim doesn’t warn Marta — she just says she’ll buy the tickets in person."
+          }
+        },
+        {
+          "id": "tr2t2q3",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Nick",
+          "text": "Don’t forget the dentist today. I’ve just thought I’d better collect you after school — if you wait for the bus like we agreed, we’ll be late getting there. We’ll have pizza afterwards, OK?",
+          "question": "",
+          "choices": {
+            "A": "Nick’s mum is asking him not to take too long coming out of school.",
+            "B": "Nick’s mum is reminding him about where they are going to eat later.",
+            "C": "Nick’s mum is suggesting a new travel arrangement."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "She isn’t telling him to hurry — she’s offering to collect him instead of him taking the bus.",
+            "B": "She only mentions pizza briefly at the end — the main focus is on how he’ll get to the dentist.",
+            "C": "She changes the plan from Nick taking the bus to her picking him up — a new travel arrangement."
+          }
+        },
+        {
+          "id": "tr2t3q3",
+          "type": "phone",
+          "sender": "Sue",
+          "receiver": "Jenny",
+          "text": "Jenny,\nMy guitar lesson’s cancelled tomorrow. Let’s meet in the park! I remember you have tennis at 9, so maybe after that? I’d like to try that ice cream place you said was good!\nSue",
+          "question": "What is Sue doing in her text?",
+          "choices": {
+            "A": "giving a reason for meeting her friend Jenny tomorrow",
+            "B": "reminding Jenny about a change to a tennis lesson tomorrow",
+            "C": "suggesting that she and Jenny meet after a music lesson"
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Sue’s message starts by explaining her guitar lesson is cancelled, which is why she’s free to meet.",
+            "B": "She refers to Jenny’s tennis but doesn’t suggest any change to it.",
+            "C": "She suggests meeting after Jenny’s tennis, not after her own guitar lesson."
+          }
+        },
+        {
+          "id": "tr2t4q4",
+          "type": "phone",
+          "sender": "Billy",
+          "receiver": "Liam",
+          "text": "I’m queuing at the café. It’s taking ages. Everyone wants ice cream! If I reach the front before you arrive, shall I order something? I’ll send a picture of the menu if so!",
+          "question": "What is Billy offering to do?",
+          "choices": {
+            "A": "Billy can let Liam know what food is available.",
+            "B": "Billy thinks the café will run out of certain items.",
+            "C": "Billy is annoyed that Liam hasn’t arrived at the café yet."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Billy offers to send a picture of the menu, which shows he wants to let Liam know what food is available.",
+            "B": "He doesn’t mention any concern about food running out — just that it’s busy.",
+            "C": "Billy’s tone isn’t annoyed; he’s simply giving an update and offering to help."
+          }
+        },
+        {
+          "id": "tr2t5q2",
+          "type": "phone",
+          "sender": "Marcus",
+          "receiver": "Lenny",
+          "text": "Lenny,\nIt’ll be fun having you to stay! I found an extra duvet, so forget what I said about bringing one. You’ll hopefully love the snacks I’ve made for while the film’s on. Hope it’s not scary!\nMarcus",
+          "question": "Marcus is texting Lenny to",
+          "choices": {
+            "A": "inform him about a change to an arrangement.",
+            "B": "give the reasons for a choice of refreshments.",
+            "C": "check that the selected film is acceptable."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Marcus originally asked Lenny to bring a duvet, but now says not to — that’s a change to the arrangement.",
+            "B": "He doesn’t explain the snack choice — he just mentions he made some.",
+            "C": "He says 'hope it’s not scary', but he isn’t asking Lenny to confirm the film is okay."
+          }
+        },
+        {
+          "id": "tr2t5q5",
+          "type": "email",
+          "from": "Grandma",
+          "to": "Amanda",
+          "subject": "Mum’s birthday",
+          "text": "I want to get a book called *Silver Rose* for your mum. Can you look on the bookshelf to make sure she hasn’t got it? But don’t let her know — it’s our secret! \nGrandma",
+          "question": "Amanda’s grandma is emailing her to",
+          "choices": {
+            "A": "check that Amanda hasn’t already bought a particular present.",
+            "B": "suggest something that Amanda can buy as a surprise.",
+            "C": "see if a present is a suitable choice for a birthday."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "Grandma isn’t checking if Amanda has bought it — she’s asking Amanda to check if *Mum* already owns the book.",
+            "B": "Grandma is suggesting *she* will buy the book, not Amanda.",
+            "C": "Grandma is making sure the book would be a good birthday gift by checking if Mum already owns it — this confirms it's a suitable surprise."
+          }
+        },
+        {
+          "id": "tr2t6q3",
+          "type": "phone",
+          "sender": "Dad",
+          "receiver": "Lily",
+          "text": "Your football kit’s still on the table! Didn’t you have a match today? Perhaps it was cancelled, but in case it wasn’t, I’ll leave it at reception on my way to the office later.",
+          "question": "",
+          "choices": {
+            "A": "Lily’s dad thinks that a sports event is no longer taking place.",
+            "B": "Lily’s dad would like to know whether or not she needs some sports clothes.",
+            "C": "Lily’s dad will bring something she might need for a school sports event."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "He says 'perhaps' it was cancelled, but he isn’t sure — he’s still planning to drop off the kit.",
+            "B": "He doesn’t ask her if she needs the kit — he just assumes she might and takes action.",
+            "C": "He’s leaving her football kit at reception in case she still has the match — this fits best."
+          }
+        },
+        {
+          "id": "tr2t6q5",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Sally",
+          "text": "I’m working late. I’ll bring something home for dinner — maybe chicken, or salmon? I’m happy either way — it’s up to you, just let me know. If you’re hungry before then, remember there’s fruit!",
+          "question": "In her note, Sally’s mum is",
+          "choices": {
+            "A": "explaining why she hasn’t left Sally anything to eat.",
+            "B": "asking Sally to make a final decision about what to eat.",
+            "C": "reminding Sally that they are going to eat out later that evening."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "She does mention fruit being available, so she hasn’t left her with nothing.",
+            "B": "She asks Sally to choose between chicken or salmon and to let her know — this is a final decision.",
+            "C": "She says she’ll bring dinner home — not that they’re eating out."
+          }
+        },
+        {
+          "id": "auths1t1q3",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Daniel",
           "text": "Your little brother’s just texted me. He’ll be late this afternoon. He forgot he had football practice at 4 p.m. Can you wait for him and bring him home as I’m really busy? – Mum",
           "question": "Daniel’s mother is texting him to:",
           "choices": {
@@ -47,31 +309,241 @@
           }
         },
         {
-          "id": 3,
+          "id": "auths1t2q1",
           "type": "phone",
-          "sender": "Anton",
-          "receiver": "Mum",
-          "text": "Anton, When you see your sister at the basketball match later, can you make sure she remembers that Dad’s coming to fetch her instead of me? I’ve tried ringing, but her phone’s off. Thanks, Mum",
-          "question": "What does Anton need to do?",
+          "sender": "Derek",
+          "receiver": "Ella",
+          "text": "Remember that we arranged to work on the poster for the school talent show tonight? I was wondering if we could do it another time as my aunt’s coming round.\nLet me know,",
+          "question": "Derek is contacting Ella to",
           "choices": {
-            "A": "Anton has to check his sister knows about the arrangements for getting home.",
-            "B": "Anton should remind his sister to switch her phone back on.",
-            "C": "Anton needs to ask his sister if she’s taking part in a sports event later."
+            "A": "suggest they change a plan.",
+            "B": "invite her to meet his aunt.",
+            "C": "remind her about an arrangement."
           },
           "correct": "A",
           "explanations": {
-            "A": "Anton needs to make sure his sister remembers the arrangements for getting home.",
-            "B": "The message doesn't ask Anton to remind his sister about her phone, but about getting home.",
-            "C": "The message is about the arrangements for getting home, not about sports."
+            "A": "Derek is suggesting a change to their plan because his aunt is visiting — this is a request to reschedule.",
+            "B": "He only mentions his aunt as the reason for the change, not as an invitation.",
+            "C": "Although he reminds her about the original plan, the main point is to suggest rescheduling."
+          }
+        },
+        {
+          "id": "auths1t2q3",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Aidan",
+          "text": "Aidan,\nThere are terrible traffic jams today, so I can’t drive to school to pick you up as usual. Why don’t you walk home rather than try to get a bus? It’ll be quicker.\nMum",
+          "question": "Aidan’s mother is",
+          "choices": {
+            "A": "explaining why she will get to Aidan’s school later than usual today.",
+            "B": "reminding Aidan that he was going to catch a bus home today.",
+            "C": "suggesting how Aidan should go home after school today."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "She says she can’t come at all, not that she’ll be late.",
+            "B": "She doesn’t mention any previous arrangement about a bus.",
+            "C": "She suggests he walk home rather than take a bus — that’s giving advice on how he should go home."
+          }
+        },
+        {
+          "id": "auths1t4q1",
+          "type": "phone",
+          "sender": "Julia",
+          "receiver": "Kira",
+          "text": "Kira,\nI’ve waited for you outside the school canteen for 20 minutes — where are you? They’ll stop serving food soon and we want to make sure we have lunch!\nJulia",
+          "question": "Julia wants Kira to",
+          "choices": {
+            "A": "wait for her so they can go to lunch together.",
+            "B": "hurry up because she doesn’t want to miss lunch.",
+            "C": "get to the canteen before it closes in 20 minutes."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "Julia is the one waiting — she’s not asking Kira to wait.",
+            "B": "Julia is urging Kira to hurry up so they don’t miss lunch — that’s the main message.",
+            "C": "There’s no specific mention of the canteen closing in 20 minutes — just that food will stop being served soon."
+          }
+        },
+        {
+          "id": "auths2t1q1",
+          "type": "phone",
+          "sender": "Katy",
+          "receiver": "Mum",
+          "text": "Mum,\nI’m next door at Amelia’s. We decided to do some practice for the school concert there – it will be quite noisy, but her parents are out. I’ll be back in time for dinner.\nKaty",
+          "question": "What does the note say?",
+          "choices": {
+            "A": "Katy and Amelia have gone to school to practise for the concert.",
+            "B": "There’s too much noise at Amelia’s house to practise there.",
+            "C": "Amelia and Katy can practise at Amelia’s house without disturbing anyone."
+          },
+          "correct": "C",
+          "explanations": {
+            "A": "They are practising at Amelia’s house, not going to school.",
+            "B": "The message says it *will* be noisy, but it's okay because her parents are out — not that it's too noisy to practise.",
+            "C": "They can practise without disturbing anyone because Amelia’s parents are out — this is the best match."
+          }
+        },
+        {
+          "id": "auths2t1q4",
+          "type": "phone",
+          "sender": "Melanie",
+          "receiver": "Jack",
+          "text": "What time are you getting to Tom’s party tonight? Is your mum driving you there? I might be a bit late, so tell him I’ll be there as soon as I can.",
+          "question": "Melanie wants Jack to",
+          "choices": {
+            "A": "let her know what time something begins.",
+            "B": "pass on a message to someone.",
+            "C": "give her a lift somewhere."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "She’s asking what time Jack is going, not when the event begins.",
+            "B": "She clearly asks Jack to tell Tom that she’ll be late — that’s passing on a message.",
+            "C": "She asks if his mum is driving him, but doesn’t ask for a lift herself."
+          }
+        },
+        {
+          "id": "auths2t2q3",
+          "type": "phone",
+          "sender": "Megan",
+          "receiver": "Sally",
+          "text": "Sally,\nI know you said you’d bring your calculator to school for me to borrow, but I won’t need it. My sister had forgotten she had a spare one in her drawer!\nThanks anyway,\nMegan",
+          "question": "",
+          "choices": {
+            "A": "Megan is thanking Sally for lending her a calculator for school.",
+            "B": "Megan is able to use a calculator that belongs to her sister.",
+            "C": "Megan has remembered where she left her spare calculator."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "Sally never actually lent the calculator — Megan is just thanking her for offering.",
+            "B": "Megan says her sister found a spare one — this is the one she’ll use.",
+            "C": "It was her sister who found the calculator, not Megan."
+          }
+        },
+        {
+          "id": "auths2t2q5",
+          "type": "phone",
+          "sender": "Pierre",
+          "receiver": "Mum",
+          "text": "We had a basketball training session today, and I’ve got a match tomorrow. I know you’re doing some washing – would you mind putting my sports kit in? I’ll need it for tomorrow.",
+          "question": "Why did Pierre write this note to his mother?",
+          "choices": {
+            "A": "to remind her about an event",
+            "B": "to ask her a favour",
+            "C": "to thank her for something"
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "Pierre does mention a match, but the main purpose is not to remind — it’s to request help.",
+            "B": "He’s asking his mum to wash his sports kit — this is clearly a favour.",
+            "C": "He thanks her in advance, but the note is mainly about a request, not gratitude."
+          }
+        },
+        {
+          "id": "auths2t4q5",
+          "type": "phone",
+          "sender": "Jess",
+          "receiver": "Fiona",
+          "text": "Hi Fiona,\nYou said you’d meet me at 6.30 p.m. Has something happened? The bus leaves in 5 minutes – we’ll miss the film if you don’t get here soon.\nJess",
+          "question": "Why has Jess sent the message?",
+          "choices": {
+            "A": "to explain to Fiona the reason for a delay",
+            "B": "to check whether Fiona is still coming",
+            "C": "to suggest a different time to meet Fiona"
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "Jess isn’t explaining why she’s delayed — she’s already there and waiting.",
+            "B": "Jess is wondering why Fiona hasn’t arrived and asks if something happened — she’s checking if Fiona is still coming.",
+            "C": "Jess doesn’t suggest a new time — she’s urging Fiona to hurry."
+          }
+        },
+        {
+          "id": "auths3t1q3",
+          "type": "phone",
+          "sender": "Mel",
+          "receiver": "Dad",
+          "text": "Dad,\nThe school hockey match didn’t finish on time – my bus drove past as I was leaving school! If you’re still at work, could you come and fetch me? Otherwise, Mum’ll do it.\nMel",
+          "question": "Why has Mel sent this message?",
+          "choices": {
+            "A": "Mel may already be too late to get a lift home with her dad.",
+            "B": "Mel is worried that neither of her parents can pick her up from school.",
+            "C": "Mel’s bus left while she was still playing a hockey match after school."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Mel says her bus has already gone and she asks her dad if he can come — implying time is running out.",
+            "B": "She suggests that if Dad can't, Mum will — so she's not worried neither can come.",
+            "C": "The message says the bus passed *as she was leaving school*, not while she was still playing."
+          }
+        },
+        {
+          "id": "auths3t2q2",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Jason",
+          "text": "Please stop at the shop after school – we need bread. If there isn’t enough milk left for coffee after you’ve had your breakfast, buy an extra litre. Otherwise, I’ll get some tomorrow.",
+          "question": "",
+          "choices": {
+            "A": "Mum will definitely go shopping tomorrow.",
+            "B": "Jason may not need to get any more milk.",
+            "C": "Jason can decide whether to buy bread after school."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "Mum says she’ll get milk *only if* Jason doesn’t — it’s not definite.",
+            "B": "Mum tells Jason to check the milk and only buy more *if necessary* — so he may not need to.",
+            "C": "Mum clearly says he *must* get bread — only the milk is optional."
+          }
+        },
+        {
+          "id": "auths3t2q3",
+          "type": "phone",
+          "sender": "Henry",
+          "receiver": "Hi Aunt Peggy",
+          "text": "I can’t help in the garden on Sunday afternoon but I could do two hours in the morning. If you need me for longer, I could manage any time on Saturday.\nHenry",
+          "question": "",
+          "choices": {
+            "A": "Henry is available on either Saturday or Sunday morning.",
+            "B": "Henry has already made arrangements for Saturday.",
+            "C": "Henry is not able to help at all on Sunday."
+          },
+          "correct": "A",
+          "explanations": {
+            "A": "Henry says he is free Sunday morning and all day Saturday — so both are available options.",
+            "B": "He doesn’t mention other plans for Saturday — he says he can help anytime.",
+            "C": "He says he *can’t* help on Sunday afternoon, but he *can* in the morning."
+          }
+        },
+        {
+          "id": "auths3t3q5",
+          "type": "phone",
+          "sender": "Mum",
+          "receiver": "Tom",
+          "text": "I’m going to the shops. Your cricket coach called – you weren’t answering your mobile. He says the weather might be too bad for tomorrow’s match. If it is, how about coming to visit Grandma?",
+          "question": "What is Tom’s mum doing?",
+          "choices": {
+            "A": "checking if Tom’s mobile phone is working properly",
+            "B": "inviting Tom to go somewhere with her if his match is cancelled",
+            "C": "asking if Tom can give her the latest information about the match"
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "She only mentions he missed a call, not that the phone is broken or malfunctioning.",
+            "B": "She’s suggesting an alternative plan (visiting Grandma) if the match is cancelled — that's the key message.",
+            "C": "She already gives Tom information from the coach; she doesn’t ask for any updates."
           }
         }
+        
       ]
     },
     {
       "name": "School and Education",
       "questions": [
         {
-          "id": 4,
+          "id": "tr2t2q2",
           "type": "note",
           "title": "Hall to be kept clear.",
           "text": "Use hall lockers provided.\nAny items which are left out will be taken to reception by staff.",
@@ -86,6 +558,31 @@
             "A": "The notice says any left-out items will be taken to lockers, not to reception.",
             "B": "The notice doesn’t say that students are allowed to leave things in the hall.",
             "C": "The notice tells students that any items left out will be placed in the lockers by staff."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clubs and Events",
+      "questions": [
+        {
+          "id": "auths1t1q4",
+          "type": "email",
+          "from": "teacher",
+          "to": "Students",
+          "subject":"",
+          "text": "Summer reading challenge for library members aged 12–18. Choose from the attached book list. You’ll get a certificate for each book you read and a prize if you read six.",
+          "question": "What does the message say about the reading challenge?",
+          "choices": {
+            "A": "People can read any book from the library as part of the reading challenge.",
+            "B": "Only certain people can take part in the reading challenge.",
+            "C": "Everyone who takes part in the reading challenge will receive a prize."
+          },
+          "correct": "B",
+          "explanations": {
+            "A": "The message mentions a specific age group for participants, not any book.",
+            "B": "Only library members aged 12–18 can join the challenge, so not everyone can take part.",
+            "C": "The message does not say that everyone will receive a prize."
           }
         }
       ]
